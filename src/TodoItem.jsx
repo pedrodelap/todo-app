@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const TodoItem = () => {
+export const TodoItem = ({key, text, completed}) => {
     return (
         <li>
             <span>V</span>
-            <p>Llamar para confirmar la reunión.</p>
+            <p>{text}</p>
             <span>X</span>
         </li>
   )

@@ -1,21 +1,31 @@
 import React from 'react'
-import { TodoCounter } from './src/TodoCounter'
-import { TodoSearch } from './src/TodoSearch'
+import { TodoCounter } from './TodoCounter'
+import { TodoSearch } from './TodoSearch'
 
-import { TodoItem } from './src/TodoItem'
-import { TodoList } from './src/TodoList'
+import { TodoItem } from './TodoItem'
+import { TodoList } from './TodoList'
 
 export const App = () => {
+
+    const defaultTodos = [
+        { text: 'Llegó el momento de actuar.', completed: true },
+        { text: 'Leer un libro interesante.', completed: false },
+        { text: 'Hacer ejercicio en casa.', completed: false },
+        { text: 'El agua llama la atención del niño.', completed: false },
+        { text: 'Organizar un espacio desordenado.', completed: false },
+        { text: 'Revisar y archivar documentos importantes.', completed: true },
+    ];
+    
     return (
         <>
-            <TodoCounter />
+            <TodoCounter completed={2} total={6}/>
 
             <TodoSearch />
 
             <TodoList>
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
+                { defaultTodos.map( todo => (
+                    < TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+                ))}
             </TodoList>
             
         </>

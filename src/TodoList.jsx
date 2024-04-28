@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const TodoList = (props) => {
+export const TodoList = ({ children }) => {
     return (
         <ul>
-            {props.children}
+            {children}
         </ul>
     )
 }
