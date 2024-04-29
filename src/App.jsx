@@ -1,9 +1,9 @@
 import React from 'react'
-import { TodoCounter } from './TodoCounter'
-import { TodoSearch } from './TodoSearch'
-
-import { TodoItem } from './TodoItem'
-import { TodoList } from './TodoList'
+import { TodoCounter } from './Componets/TodoCounter'
+import { TodoSearch } from './Componets/TodoSearch'
+import { TodoItem } from './Componets/TodoItem'
+import { TodoList } from './Componets/TodoList'
+import { CreateTodoButton } from './Componets/CreateTodoButton'
 
 export const App = () => {
 
@@ -24,9 +24,11 @@ export const App = () => {
 
             <TodoList>
                 { defaultTodos.map( todo => (
-                    < TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+                    < TodoItem  text={todo.text} completed={todo.completed}/>
                 ))}
             </TodoList>
+
+            <CreateTodoButton />
             
         </>
     )
